@@ -4,5 +4,5 @@ readme.html
 license.txt
 sitemap.xml
 sitemap.xml.gz
-wp-content/upgrade/
-wp-content/plugins/
+wp-content/upgrade/*
+wp-content/plugins/*
