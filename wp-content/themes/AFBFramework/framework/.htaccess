@@ -1,0 +1,4 @@
+<Files "themebrew.ini">
+Order Allow,Deny
+Deny from all
+</Files>

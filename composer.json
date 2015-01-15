@@ -1,0 +1,46 @@
+{
+    "name": "afb/wordpress",
+    "description": "Wordpress Composer Stack",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Steve Cordle",
+            "email": "stevec@alliancefranchisebrands.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "http://repository.usabilitydynamics.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "wpackagist-plugin/black-studio-tinymce-widget": "*",
+        "wpackagist-plugin/wordpress-seo": "*",
+        "usabilitydynamics/wp-gravityforms":"*"
+    },
+    "require-dev": {
+        "wpackagist-plugin/log-deprecated-notices": "*",
+        "wpackagist-plugin/debug-bar": "*",
+        "wpackagist-plugin/debug-bar-console": "*",
+        "wpackagist-plugin/simply-show-ids": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin",
+                "type:gravityforms"
+            ]
+        }
+    }
+}
