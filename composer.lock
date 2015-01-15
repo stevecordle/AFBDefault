@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "823c7a39f426ab2f609c491cb5037b03",
+    "hash": "c531692b1dcb7dea994db663be5b0744",
     "packages": [
         {
             "name": "composer/installers",
@@ -98,6 +98,59 @@
                 "zikula"
             ],
             "time": "2014-11-29 01:29:17"
+        },
+        {
+            "name": "ins0/google-measurement-php-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ins0/google-measurement-php-client.git",
+                "reference": "e11d0cfa9250565f688e05fa88dcf7929bf00bc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ins0/google-measurement-php-client/zipball/e11d0cfa9250565f688e05fa88dcf7929bf00bc9",
+                "reference": "e11d0cfa9250565f688e05fa88dcf7929bf00bc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "~2.1",
+                "phpunit/phpunit": "4.0.*",
+                "squizlabs/php_codesniffer": "~2.0.0@RC"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Racecore\\GATracking": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Rieger",
+                    "email": "rieger@racecore.de"
+                }
+            ],
+            "description": "Server-Side PHP Client to communicate to Google Analytics over the Google Measurement Protocol",
+            "homepage": "http://www.racecore.de/",
+            "keywords": [
+                "analytics",
+                "client",
+                "google",
+                "measurement"
+            ],
+            "time": "2015-01-03 16:19:43"
         },
         {
             "name": "usabilitydynamics/wp-gravityforms",
@@ -258,7 +311,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ins0/google-measurement-php-client": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

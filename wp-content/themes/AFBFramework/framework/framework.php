@@ -138,12 +138,12 @@ class ThemeBrew {
     }
     
     function changeLoginLogo(){
-        global $TBOptions;
-        list($width, $height, $type, $attr) = getimagesize($TBOptions['opt-branding-logo']['url']);
+        global $Ops;
+        list($width, $height, $type, $attr) = getimagesize($Ops['opt-branding-logo']['url']);
 ?>
         <style type="text/css">
             body.login div#login h1 a {
-                background-image: url(<?php echo $TBOptions['opt-branding-logo']['url']; ?>);
+                background-image: url(<?php echo $Ops['opt-branding-logo']['url']; ?>);
                 width: <?php echo $width; ?>px;
                 height: <?php echo $height; ?>px;
                 background-size: <?php echo $width.'px '.$height; ?>px;
