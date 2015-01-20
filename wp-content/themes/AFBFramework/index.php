@@ -19,7 +19,7 @@ get_header();
                      data-cycle-fx="fade"
                      data-cycle-auto-height="672:275"
                      >
-                         <?php foreach ($TBOptions['opt-slides'] as $slide): ?>
+                         <?php foreach ($Ops['opt-slides'] as $slide): ?>
                         <div class="slide">
                             <div class="col-xs-12" style="padding: 0;">
                                 <img src="<?php echo $slide['image']; ?>" class="img-responsive" alt="<?php echo $slide['title']; ?>"/>

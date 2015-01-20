@@ -1,7 +1,0 @@
-{
-    "name": "stevecordle/themebrew",
-    "type": "wordpress-theme",
-    "require": {
-        "composer/installers": "*"
-    }
-}

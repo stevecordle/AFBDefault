@@ -1,4 +1,4 @@
-<?php global $TBOptions; ?>
+<?php global $Ops; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +36,7 @@
                     <?php dynamic_sidebar('header-phone'); ?>
                 </div>
                         <div class="col-xs-12 col-sm-8">
-                            <nav class="navbar navbar-default <?php echo ($TBOptions['opt-nav-position'] !== 'default' ? $TBOptions['opt-nav-position'] : ''); ?>">
+                            <nav class="navbar navbar-default <?php echo ($Ops['opt-nav-position'] !== 'default' ? $Ops['opt-nav-position'] : ''); ?>">
 
                                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                                     <?php

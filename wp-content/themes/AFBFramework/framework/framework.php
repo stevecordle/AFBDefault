@@ -93,6 +93,7 @@ class ThemeBrew {
         self::registerMenus();
         self::loadClasses();
         self::loadCustomPosts();
+        self::loadWidgetAreas();
         self::loadWidgets();
         self::loadOptions();
         self::init();
@@ -139,11 +140,11 @@ class ThemeBrew {
     
     function changeLoginLogo(){
         global $Ops;
-        list($width, $height, $type, $attr) = getimagesize($Ops['opt-branding-logo']['url']);
+        list($width, $height, $type, $attr) = getimagesize($Ops['logo']['url']);
 ?>
         <style type="text/css">
             body.login div#login h1 a {
-                background-image: url(<?php echo $Ops['opt-branding-logo']['url']; ?>);
+                background-image: url(<?php echo $Ops['logo']['url']; ?>);
                 width: <?php echo $width; ?>px;
                 height: <?php echo $height; ?>px;
                 background-size: <?php echo $width.'px '.$height; ?>px;
@@ -227,7 +228,8 @@ class ThemeBrew {
         define('THEME_CSS',             trailingslashit(THEME_ASSETS) . 'css');
         define('THEME_CSS_DIR',         trailingslashit(THEME_ASSETS_DIR) . 'css');
         
-        /*
+        define('CONFIG_DIR',            trailingslashit(THEME_DIR) . 'config');
+        define('CONFIG_URL',            trailingslashit(THEME_URL) . 'config');        /*
          * ThemeBrew (Framework) Specific Constants
          */
         define('FRAMEWORK_NAME',            "Theme Brew");
@@ -245,17 +247,11 @@ class ThemeBrew {
         define('FRAMEWORK_SHORTCODES',      trailingslashit(FRAMEWORK_URL).'shortcodes');
         define('FRAMEWORK_SHORTCODES_DIR',  trailingslashit(FRAMEWORK_DIR).'shortcodes');
         
-        define('FRAMEWORK_WIDGETS',         trailingslashit(FRAMEWORK_URL).'widgets');
-        define('FRAMEWORK_WIDGETS_DIR',     trailingslashit(FRAMEWORK_DIR).'widgets');
-        
         define('FRAMEWORK_PLUGINS',         trailingslashit(FRAMEWORK_URL).'plugins');
         define('FRAMEWORK_PLUGINS_DIR',     trailingslashit(FRAMEWORK_DIR).'plugins');
         
         define('FRAMEWORK_CUSTOMPOSTS',     trailingslashit(FRAMEWORK_URL).'customposts');
         define('FRAMEWORK_CUSTOMPOSTS_DIR',  trailingslashit(FRAMEWORK_DIR).'customposts');
-        
-        define('FRAMEWORK_SLIDERS',         trailingslashit(FRAMEWORK_URL).'sliders');
-        define('FRAMEWORK_SLIDERS_DIR',     trailingslashit(FRAMEWORK_DIR).'sliders');
         
         define('FRAMEWORK_ASSETS',          trailingslashit(FRAMEWORK_URL). 'assets');
         define('FRAMEWORK_ASSETS_DIR',      trailingslashit(FRAMEWORK_DIR). 'assets');
@@ -291,7 +287,7 @@ class ThemeBrew {
         add_action('wp_enqueue_scripts', array($this, 'loadFonts'), 1);
 
         //Load widgets from themebrew.ini file
-        add_action( 'widgets_init', array($this, 'loadWidgets'));
+        add_action( 'widgets_init', array($this, 'loadWidgetAreas'));
         
         //Allow shortcodes to be used in widgets.
         add_filter('widget_text', 'do_shortcode');
@@ -328,7 +324,7 @@ class ThemeBrew {
      * 
      * @since 0.1.0
      */
-    function loadWidgets(){
+    function loadWidgetAreas(){
         global $wp_registered_sidebars;
         if(isset($this->config['widget_areas']['areas'][0])){
             foreach($this->config['widget_areas']['areas'] as $area){
@@ -387,9 +383,6 @@ class ThemeBrew {
      * @since 0.1.0
      */
     protected function loadShortcodes(){
-        remove_filter( 'the_content', 'wpautop' );
-        add_filter('the_content', 'wpautop' , 99);
-        add_filter('the_content', 'shortcode_unautop' , 100);
         foreach(glob(FRAMEWORK_SHORTCODES_DIR.'/*.php') as $file){
             $shortcode = basename($file);
             if(preg_match('/^_.*/', $shortcode)){  
@@ -406,8 +399,21 @@ class ThemeBrew {
      * 
      * @since 0.5.0
      */
+    protected function loadWidgets(){
+        foreach(glob(trailingslashit(THEME_DIR).'config/widgets/*.php') as $file){
+            $test = basename($file);
+            if(!preg_match('/^_.*/', $test)){
+                require_once($file);
+            }
+        }
+    }
+    /**
+     * Load Custom Posts
+     * 
+     * @since 0.5.0
+     */
     protected function loadCustomPosts(){
-        foreach(glob(FRAMEWORK_CUSTOMPOSTS_DIR.'/*.php') as $file){
+        foreach(glob(trailingslashit(THEME_DIR).'config/customposts/*.php') as $file){
             $test = basename($file);
             if(!preg_match('/^_.*/', $test)){
                 require_once($file);

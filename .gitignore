@@ -6,3 +6,4 @@ sitemap.xml
 sitemap.xml.gz
 wp-content/upgrade/*
 wp-content/plugins/*
+/nbproject/*
