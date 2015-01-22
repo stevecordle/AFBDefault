@@ -23,7 +23,8 @@
         "wpackagist-plugin/black-studio-tinymce-widget": "*",
         "wpackagist-plugin/wordpress-seo": "*",
         "usabilitydynamics/wp-gravityforms":"*",
-        "ins0/google-measurement-php-client": "dev-master"
+        "ins0/google-measurement-php-client": "dev-master",
+        "nesbot/carbon": "dev-master"
     },
     "require-dev": {
         "wpackagist-plugin/log-deprecated-notices": "*",

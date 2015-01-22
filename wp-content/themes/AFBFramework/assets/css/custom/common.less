@@ -1,0 +1,57 @@
+body{
+    background:url(../img/background-stripe.png) repeat;
+}
+
+#main{
+    .content{
+        background:@white;
+        .border-radius(10px);
+        padding-top:40px;
+        padding-bottom:40px;
+        position:relative;
+        margin-top:40px;
+        margin-bottom:40px;
+        border:solid 1px @gray;
+    }
+    .sidebar{
+        position:relative;
+        margin-top:40px;
+        margin-bottom:40px;
+    }
+}
+
+.divider{
+    margin-top:20px;
+    border-bottom:solid 1px @black;
+    margin-bottom:19px;
+}
+
+
+.crnr{
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    z-index:10;
+    position:absolute;
+    width:70px;
+    height:60px;
+    &.tlcorner{
+        background-image:url(../img/top-left.png);
+        left:-6px;
+        top:-4px;
+    }
+    &.trcorner{
+        background-image:url(../img/top-right.png);
+        right:-6px;
+        top:-4px;
+    }
+    &.blcorner{
+        background-image:url(../img/bottom-left.png);
+        left:-6px;
+        bottom:-5px;
+    }
+    &.brcorner{
+        background-image:url(../img/bottom-right.png);
+        right: -6px;
+        bottom: -4px;
+    }
+}

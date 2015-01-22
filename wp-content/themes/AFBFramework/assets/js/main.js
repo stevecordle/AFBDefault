@@ -3,7 +3,13 @@
         var App = {};
         
         App.init = function(){ 
-            //Init Functions here
+            //Setup mobile nav
+            $("#mmobile-nav").mmenu({
+                offCanvas: {
+                    position  : "left",
+                    zposition : "front"
+                }
+            });
         };
         
         App.init();

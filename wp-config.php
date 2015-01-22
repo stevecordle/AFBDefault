@@ -18,7 +18,7 @@ if (WP_ENV == 'dev') {
     define('SCRIPT_DEBUG', true);
     define('SAVEQUERIES', true);
     
-    define('DB_NAME', 'jroy');
+    define('DB_NAME', 'taproom');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost');
@@ -34,24 +34,27 @@ if (WP_ENV == 'dev') {
     define('SCRIPT_DEBUG', false);
     define('SAVEQUERIES', false);
     
-    define('DB_NAME', 'prod_dbname');
-    define('DB_USER', 'prod_user');
-    define('DB_PASSWORD', 'prod_pass');
+    define('DB_NAME', 'r_tap_room');
+    define('DB_USER', 'r_tap_room');
+    define('DB_PASSWORD', 'Taproom2015#');
     define('DB_HOST', 'localhost');
 } 
 
+/*********************************************************************************************
+ *  VISIT:    https://api.wordpress.org/secret-key/1.1/salt/                                 *
+ *  To copy/paste keys below                                                                 *
+ *********************************************************************************************/
 
-define('AUTH_KEY',         'E|S@P6wertwertwerrib|IB h#D*sdfasdfasdfasdfasdsddN{$2I}|xwretCq=');
-define('SECURE_AUTH_KEY',  'Zg=hV)Ri=_T|Z|]S5Ddraasno9fy3y9bfyfov3y9fvoif4gh|8SNT[d+>uEpkD9Q');
-define('LOGGED_IN_KEY',    '^(u Hc}TKsdgdgergergerertwertr{;[jFag7?N[|)c#R#-UFV)!B%+M]Lw)4Z&');
-define('NONCE_KEY',        '1~ps531g^P)-Ce$Iq-YgH<sdfhererherhafhdbte5a5a3443bvIH6s,,&9>4@lK');
-define('AUTH_SALT',        '3{?U~4G+vtgi93jgnc383v893483983rgh34j}T pFjT}a^T9+-8J|[8~^s>CASC');
-define('SECURE_AUTH_SALT', 'J!*Ym7n**V%*&^V&^$&%OVIIGYB*BH()H(B*YO*&^BI^BVR^*&RB^(*T^*BwG_@X');
-define('LOGGED_IN_SALT',   'lUY*r%_pk?NqVV^%I&&$^C%$^IC^KY%IVVYYFrtwertR*DN!)8v*DaL7#K:^?H]=');
-define('NONCE_SALT',       'ULNiep=-wertIV&%i7465cvklivKRkuUBNI6r#>/.zIE@#;tBq?6$F,7o7<[=TtM');
+define('AUTH_KEY',         '-nZ6kj>[OI.jsw1:`qSN;-ZbdWUng]ro|d-0B<ZW8#<i~<Kah.y[@1A{6N(%[/H$');
+define('SECURE_AUTH_KEY',  '|0[8_rVvu<I>zVJJO}E)PsC([2RkOiRA&ww&P78l6F@ L[=X6j! s-nrNM7wU+`C');
+define('LOGGED_IN_KEY',    '#HJN6Iv?tK>&K${z!8N35+uqI!bzguE2Zd|-`-d]Qee`.F,6#IhI}$^izvV+:2?d');
+define('NONCE_KEY',        'Pw+Tbeu+DHqa@mY{E[:Gx&^l :/q(n{]B`D{?,j{p#kI2zS-$t|IO|y+|/0m?vya');
+define('AUTH_SALT',        ':Wi,#uH3s* GAnReJI*;B47+<Xb0g+,R]NT%O?MJ(;X82~I7%#)aY31qr44hJxlG');
+define('SECURE_AUTH_SALT', 'pyB!.QKyxc -I36TQ G<.-#j+EYI#~CNpj-=7Qd0-/f$rK*ybkRj^s$d=)+.+;1+');
+define('LOGGED_IN_SALT',   'nPY}Z ]ZAU+<x_CgA;]F|S> ,_:ck OBgL7B4%p;QCtd]R-lP7=-|3>+-U/U47Ui');
+define('NONCE_SALT',       '+exs=xynws%FNtW-#q4,)OQiTFpV^vkDr.u<L+Yc!4>|uSBP|wI6Sg=a|H[0IB8h');
 
 $table_prefix  = 'wp_';
-
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
@@ -59,5 +62,4 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
 require_once('vendor/autoload.php');

@@ -6,23 +6,21 @@ get_header();
 </div>
 <div class="clearfix"></div>
 <div id="main" role="main" class="main-page-bg">
-    <section class="page-content">
-        <div class="container">
-            <?php if (have_posts()): while (have_posts()): the_post(); ?>
-                    <h1 class="page-title col-xs-12"><?php the_title(); ?></h1>
-                    <div class="col-xs-12 col-sm-9">
-                        <div class="content">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3">
-                        <?php dynamic_sidebar('page-sidebar'); ?>
-                    </div>
-                    <?php
-                endwhile;
-            endif;
-            ?>
-    </section>
+    <div class="container">
+        <div class="content col-xs-12 col-sm-8">
+            <div class="crnr tlcorner"></div>
+            <div class="crnr trcorner"></div>
+            <div class="crnr blcorner"></div>
+            <div class="crnr brcorner"></div>
+            <?php if (have_posts()): while (have_posts()): the_post(); ?> 
+                <h1 class="page-title"><?php the_title(); ?></h1>
+                <?php the_content(); ?>
+            <?php endwhile; endif; ?>
+        </div>
+        <aside class="sidebar col-xs-12 col-sm-4">
+            <?php dynamic_sidebar('sidebar'); ?>
+        </aside>
+    </div>
 </div>
 </div>
 <?php get_footer(); ?>

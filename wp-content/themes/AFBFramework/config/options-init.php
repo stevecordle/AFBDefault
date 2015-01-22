@@ -350,7 +350,7 @@ if (!class_exists('Options_Redux_Framework_config')) {
                 'desc'      => __('This section provides options to brand the theme to your company/website.', 'TBOptions'),
                 'fields'    => array(
                     array(
-                        'id'        => 'opt-branding-logo',
+                        'id'        => 'logo',
                         'type'      => 'media',
                         'url'       => true,
                         'preview'   => true,

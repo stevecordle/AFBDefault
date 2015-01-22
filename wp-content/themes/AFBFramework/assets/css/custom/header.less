@@ -1,13 +1,14 @@
-.header-top{
-    background: url('../img/header-top-bg.png') repeat-x top left;
-    height: 65px;
-}
 header{
-    padding: 35px 0px;
-    position: relative;
-    background: @white;
-    @media(min-width: 0) and (max-width: @screen-xs-max) { 
-        padding: 35px 0 0 0;
-
+    .header-top{
+        height:100px;
+        background-color:@gray;
+    }
+    .header-main{
+        height:250px;
+        background-color:@black;
+        border-bottom:solid 10px @lightrust;
+    }
+    .logo{
+        margin-top:10px;
     }
 }
