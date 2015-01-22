@@ -17,7 +17,7 @@
 //exit if accessed directly
 if(!defined('ABSPATH')) exit;
 
-class BootstrapWalker extends Walker_Nav_Menu {
+class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()
@@ -62,11 +62,10 @@ class BootstrapWalker extends Walker_Nav_Menu {
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
 
-                        $value = '';
+			$class_names = $value = '';
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
-                        $classes[] = 'nav-item-'.str_replace('-&-', '-', str_replace(' ', '-', strtolower($item->title)));
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
@@ -74,13 +73,14 @@ class BootstrapWalker extends Walker_Nav_Menu {
 			if ( $args->has_children )
 				$class_names .= ' dropdown';
 			*/
+
 			if($args->has_children && $depth === 0) { $class_names .= ' dropdown'; } elseif($args->has_children && $depth > 0) { $class_names .= ' dropdown-submenu'; }
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 
 			// remove Font Awesome icon from classes array and save the icon
-			// we will add the icon ack in via a <span> below so it aligns with
+			// we will add the icon back in via a <span> below so it aligns with
 			// the menu item
 			if ( in_array('fa', $classes)) {
 				$key = array_search('fa', $classes);
