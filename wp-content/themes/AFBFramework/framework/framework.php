@@ -140,7 +140,10 @@ class ThemeBrew {
     
     function changeLoginLogo(){
         global $Ops;
-        list($width, $height, $type, $attr) = getimagesize($Ops['logo']['url']);
+        $path = str_replace('wordpress', '', getcwd());
+        $parsed = parse_url($Ops['logo']['url']);
+        $logo = $path.$parsed['path'];
+        list($width, $height) = getimagesize($logo);
 ?>
         <style type="text/css">
             body.login div#login h1 a {

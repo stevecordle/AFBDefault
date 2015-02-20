@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3"
+                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/1bff8aa77a18f3616f468ed8000cf86a5725bac3",
-                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
                 "shasum": ""
             },
             "replace": {
@@ -63,6 +63,7 @@
                 "Thelia",
                 "WolfCMS",
                 "agl",
+                "aimeos",
                 "annotatecms",
                 "bitrix",
                 "cakephp",
@@ -98,7 +99,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-01-11 03:51:11"
+            "time": "2015-02-18 17:17:01"
         },
         {
             "name": "ins0/google-measurement-php-client",
@@ -106,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ins0/google-measurement-php-client.git",
-                "reference": "e11d0cfa9250565f688e05fa88dcf7929bf00bc9"
+                "reference": "8f4ee2ef9da49f734ee47ade739bd4250d6e53cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ins0/google-measurement-php-client/zipball/e11d0cfa9250565f688e05fa88dcf7929bf00bc9",
-                "reference": "e11d0cfa9250565f688e05fa88dcf7929bf00bc9",
+                "url": "https://api.github.com/repos/ins0/google-measurement-php-client/zipball/8f4ee2ef9da49f734ee47ade739bd4250d6e53cb",
+                "reference": "8f4ee2ef9da49f734ee47ade739bd4250d6e53cb",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +152,7 @@
                 "google",
                 "measurement"
             ],
-            "time": "2015-01-03 16:19:43"
+            "time": "2015-01-26 20:15:26"
         },
         {
             "name": "usabilitydynamics/wp-gravityforms",

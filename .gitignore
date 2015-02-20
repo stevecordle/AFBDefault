@@ -7,3 +7,6 @@ sitemap.xml.gz
 wp-content/upgrade/*
 wp-content/plugins/*
 /nbproject/*
+/.com.apple.timemachine.supported
+/wp-content/debug.log
+/wp-content/uploads/
