@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     },
     watch: {
         css: {
-            files: 'wp-content/themes/AFBFramework/assets/css/custom/*.less',
+            files: ['wp-content/themes/AFBFramework/assets/css/custom/*.less', 'wp-content/themes/AFBFramework/assets/css/style.less'],
             tasks: ['less', 'cssmin']
         },
         js:{

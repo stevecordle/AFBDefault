@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><?php wp_title('&laquo;', true, 'right'); ?></title>
-        <?php wp_head(); ?>
+        <?php wp_head(); ?> 
     </head>
     <body>
         <div id="page" class="mm-page"> <!-- the wrapper start -->
@@ -22,30 +22,23 @@
             <div class="hidden-md hidden-lg visible-xs row mobile-trigger-wrap">
                 <a id="mobile-menu-trigger" class="icon icon-bars" href="#mmobile-nav"> Menu</a>
             </div>
-            <div class="header-top"></div>
+            <div class="container">
             <header>
-                <div class="header-inner">
-                    <div class="container">
-                        <div class="col-xs-12 col-sm-4 col-sm-offset-8 header-logos">
-                            <?php dynamic_sidebar('header-phone'); ?>
-                        </div>
-                        <div class="col-xs-12 col-sm-8">
-                            <nav class="navbar navbar-default">
-                                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                                    <?php
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'main-menu',
-                                        'container' => false,
-                                        'menu_class' => 'nav navbar-nav',
-                                        'depth' => 3,
-                                        'walker' => new BootstrapWalker()
-                                    ));
-                                    ?>
-                                </div>
-                        </div>
-                    </div>
+                <div class="col-xs-12 col-sm-4 col-sm-offset-8 header-logos">
+                    <?php dynamic_sidebar('header-phone'); ?>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <nav class="navbar navbar-default">
+                        <div class="collapse navbar-collapse navbar-responsive-collapse">
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location' => 'main-menu',
+                                'container' => false,
+                                'menu_class' => 'nav navbar-nav',
+                                'depth' => 3,
+                                'walker' => new BootstrapWalker()
+                            ));
+                            ?>
                     </nav>
                 </div>
-                <div class="clearfix"></div>
-        </div>
-    </header>
+            </header>
