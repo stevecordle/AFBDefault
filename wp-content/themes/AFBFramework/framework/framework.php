@@ -431,8 +431,11 @@ class ThemeBrew {
      */
     function loadPublicScripts(){   
         wp_register_script('main', trailingslashit(THEME_JS).'app.min.js', array('jquery'), '1.0.0', true);
+        wp_register_script('cycle', trailingslashit(THEME_JS).'lib/cycle2.js', array('jquery'), '1.0.0', true);
         //Enqueue scripts
         wp_enqueue_script('jquery');
+        if($this->config['ini']['usecycle'] == "true")
+            wp_enqueue_script('cycle');
         wp_enqueue_script('main');
     }
     
