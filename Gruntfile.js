@@ -1,25 +1,17 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
     less: {
-      options: {
-        paths: ["wp-content/themes/AFBFramework/assets/css"]
-      },
-      files: {
-        "wp-content/themes/AFBFramework/assets/css/style.css": "wp-content/themes/AFBFramework/assets/css/style.less"
-      }
-    },
-    cssmin:{
-        target: {
-          files: [{
-            expand: true,
-            cwd: 'wp-content/themes/AFBFramework/assets/css/',
-            src: ['*.css', '!*.min.css'],
-            dest: 'wp-content/themes/AFBFramework/assets/css/',
-            ext: '.min.css'
-          }]
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          "wp-content/themes/AFBFramework/assets/css/style.min.css": "wp-content/themes/AFBFramework/assets/css/style.less" // destination file and source file
         }
+      }
     },
     uglify: {
         my_target: {
@@ -31,7 +23,7 @@ module.exports = function(grunt) {
     watch: {
         css: {
             files: ['wp-content/themes/AFBFramework/assets/css/custom/*.less', 'wp-content/themes/AFBFramework/assets/css/style.less'],
-            tasks: ['less', 'cssmin']
+            tasks: ['less']
         },
         js:{
             files: 'wp-content/themes/AFBFramework/assets/js/main.js',
@@ -41,11 +33,10 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['less', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['less', 'uglify']);
 
 };
