@@ -1,16 +1,16 @@
 Use the following commands to clone/install everything need for a new wordpress website using AFBFramework.
 
 ##STEPS FOR NEW SITE SETUP##
----
+----------------------------
 
 1. git clone https://github.com/stevecordle/AFGDefault.git .
-1. git submodule init
-1. git submodule update
-1. composer selfupdate
-1. composer update
-1. cd wordpress && git checkout 4.1.1 (or current Version)
+2. git submodule init
+3. git submodule update
+4. composer selfupdate
+5. composer update
+6. cd wordpress && git checkout 4.1.1 (or current Version)
 
----
+----------------------------
 Copy paste the below to go thru all of the steps with one line
 
 
