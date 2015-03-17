@@ -130,7 +130,6 @@ class ThemeBrew {
     protected function loadHooks(){
         //Set some default hooks here
         
-        add_action('after_setup_theme', array($this, 'changeLoginLogo'));
         add_filter('login_headerurl', array($this, 'changeLoginURL'));
         add_filter('login_headertitffle', array($this, 'changeLoginTitle'));
         add_action('login_enqueue_scripts', array($this, 'changeLoginLogo'));
@@ -147,20 +146,22 @@ class ThemeBrew {
     
     function changeLoginLogo(){
         global $Ops;
-        $path = str_replace('wordpress', '', getcwd());
+        $path = str_replace('/wp-content', '', WP_CONTENT_DIR);
+
         $parsed = parse_url($Ops['logo']['url']);
+
         $logo = $path.$parsed['path'];
         list($width, $height) = getimagesize($logo);
-?>
-        <style type="text/css">
+
+        echo "<style type='text/css'>
             body.login div#login h1 a {
-                background-image: url(<?php echo $Ops['logo']['url']; ?>);
-                width: <?php echo $width; ?>px;
-                height: <?php echo $height; ?>px;
-                background-size: <?php echo $width.'px '.$height; ?>px;
+                background-image: url({$Ops['logo']['url']});
+                width: {$width}px;
+                height: {$height}px;
+                background-size: {$width}px {$height}px;
             }
-        </style>
-<?php
+        </style>";
+
     }
     
     function changeLoginURL(){
