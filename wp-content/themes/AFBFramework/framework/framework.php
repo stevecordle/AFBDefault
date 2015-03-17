@@ -3,10 +3,10 @@
  * Themebrew Framework.
  *
  * @package   ThemeBrew
- * @author    Steve Cordle <steve@themebrew.com>
+ * @author    Steve Cordle <steve@devinate.com>
  * @license   GPL-2.0+
  * @link      http://themebrew.com
- * @copyright 2014 Themebrew, LLC
+ * @copyright 2015 Themebrew, LLC
  */
 
 class ThemeBrew {
@@ -50,6 +50,12 @@ class ThemeBrew {
      * @var object
      */
     protected static $instance = null;
+    
+    protected static $lorem_ipsum = 
+"<p>Lorem ipsum dolor sit amet, et fierent urbanitas vim, pri at magna consetetur, essent recusabo eu pri. Te pro nulla virtute civibus, id illum altera mentitum eam, cum et atomorum mandamus. Solum sententiae et pri, pri expetendis temporibus ea. Justo dicat legimus ex his, dolor timeam perfecto cu duo. Ad duis prima moderatius pro, possim veritus nam id. Vel at possit delicatissimi, ut lucilius mediocrem explicari sit.<p>Id vim mazim vitae eruditi, ius ex adipiscing constituam appellantur, qui at aliquid debitis prodesset. Qui summo novum utamur ne, eam probo aeterno cu. Persecuti definitionem nam ea, graecis tacimates mea id, est graeco alienum id. Cum ut magna intellegat, graeco gubergren hendrerit no per. Eu sea iudico vocent labores.</p>
+<p>Id vim mazim vitae eruditi, ius ex adipiscing constituam appellantur, qui at aliquid debitis prodesset. Qui summo novum utamur ne, eam probo aeterno cu. Persecuti definitionem nam ea, graecis tacimates mea id, est graeco alienum id. Cum ut magna intellegat, graeco gubergren hendrerit no per. Eu sea iudico vocent labores.</p>
+<p>Ad justo porro invidunt per, vel ne everti eripuit nonumes. An gubergren constituam efficiantur usu, ridens copiosae sententiae ex vel. At sumo blandit euripidis sed, aeque pertinacia no ius. Essent sensibus qui an. At ius omnium virtute delectus, regione inimicus interesset ei eam, ex eam epicuri blandit.</p>";
+    
      
     /**
      * Shortcodes active/inactive list array
@@ -124,8 +130,9 @@ class ThemeBrew {
     protected function loadHooks(){
         //Set some default hooks here
         
+        add_action('after_setup_theme', array($this, 'changeLoginLogo'));
         add_filter('login_headerurl', array($this, 'changeLoginURL'));
-        add_filter('login_headertitle', array($this, 'changeLoginTitle'));
+        add_filter('login_headertitffle', array($this, 'changeLoginTitle'));
         add_action('login_enqueue_scripts', array($this, 'changeLoginLogo'));
         //Check if theme/config/hooks.php exists and load that hooks file.
         if(file_exists(trailingslashit(THEME_DIR).'config/hooks.php')){
@@ -446,7 +453,7 @@ class ThemeBrew {
      */
     function loadPublicStyles(){
         //Register custom fonts & style.css
-        wp_register_style('main', trailingslashit(THEME_CSS).'style.css', false); 
+        wp_register_style('main', trailingslashit(THEME_CSS).'style.min.css', false); 
         //Enqueue custom fonts & style.css
         wp_enqueue_style('main');
     }
@@ -501,6 +508,7 @@ class ThemeBrew {
 
 	return $clean;
     }
+
     
     /**
      * Cloning is forbidden.

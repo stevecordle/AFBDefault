@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 'On');
 if ($_SERVER['REMOTE_ADDR']=='127.0.0.1') {
     define('WP_ENV', 'dev');
 } else {
@@ -18,9 +18,9 @@ if (WP_ENV == 'dev') {
     define('SCRIPT_DEBUG', true);
     define('SAVEQUERIES', true);
     
-    define('DB_NAME', 'afb_corp_db');
+    define('DB_NAME', 'dev_afbframework');
     define('DB_USER', 'root');
-    define('DB_PASSWORD', '');
+    define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost');
 } else {
     define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
