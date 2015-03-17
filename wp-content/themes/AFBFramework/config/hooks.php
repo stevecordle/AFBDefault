@@ -1,5 +1,5 @@
 <?php
-if($_GET['activated'] && is_admin()){
+if(!empty($_GET['activated']) && is_admin()){
         
     $samplePage = get_page_by_title('Sample Page');
     $samplePost = get_post('Hello world!');
