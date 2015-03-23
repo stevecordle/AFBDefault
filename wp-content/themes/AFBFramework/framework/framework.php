@@ -193,7 +193,7 @@ class ThemeBrew {
                 if(count($this->config['menu_positions']['positions']) >= 1){
                     $id = self::slugify($value);
                     $menus[$id] = $value;
-                    $this->menus[] = $value;
+                    $this->menus[$id] = $value;
                 }
             }
         }
@@ -243,12 +243,9 @@ class ThemeBrew {
         define('CONFIG_URL',            trailingslashit(THEME_URL) . 'config');        /*
          * ThemeBrew (Framework) Specific Constants
          */
-        define('FRAMEWORK_NAME',            "Theme Brew");
-        define('FRAMEWORK_SLUG',            "themebrew");
-        define('FRAMEWORK_VERSION',         '0.1.0');
-        define('FRAMEWORK_SITE',            'http://www.themebrew.com');
-        define('FRAMEWORK_DOCS',            'http://www.themebrew.com/docs');
-        define('FRAMEWORK_SUPPORT',         'http://www.themebrew.com/support');
+        define('FRAMEWORK_NAME',            "AFB Framework");
+        define('FRAMEWORK_SLUG',            "afbframework");
+        define('FRAMEWORK_VERSION',         '1.1.0');
         define('FRAMEWORK_DIR',             trailingslashit(THEME_DIR).'framework');
         define('FRAMEWORK_URL',             trailingslashit(THEME_URL).'framework');
         
@@ -305,11 +302,6 @@ class ThemeBrew {
         
         //Add the Excerpt field to pages
         add_post_type_support( 'page', 'excerpt' );
-        
-        //Set memory_limit to 64M, mostly because WooCommerce likes it
-        //Will most likely need to add -  define('WP_MEMORY_LIMIT', '64M');  - to the wp-config.php file so Wordpress sets the memory_limit to 64M as well.
-        ini_set('memory_limit', '64M');  
-        ini_set('post_max_size', '64M');  
         
         // Kill the "Notice: ob_end_flush(): failed to send buffer of zlib output compression" error
         // https://core.trac.wordpress.org/ticket/18525
@@ -442,8 +434,9 @@ class ThemeBrew {
         wp_register_script('cycle', trailingslashit(THEME_JS).'lib/cycle2.js', array('jquery'), '1.0.0', true);
         //Enqueue scripts
         wp_enqueue_script('jquery');
-        if($this->config['ini']['usecycle'] == "true")
+        if($this->config['ini']['usecycle'] === "1"){
             wp_enqueue_script('cycle');
+        }
         wp_enqueue_script('main');
     }
     
