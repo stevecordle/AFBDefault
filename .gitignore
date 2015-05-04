@@ -10,3 +10,4 @@ wp-content/plugins/*
 /.com.apple.timemachine.supported
 /wp-content/debug.log
 /wp-content/uploads/
+/node_modules/

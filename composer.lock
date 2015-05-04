@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d9e0f6fcd160b5fee9c67cdeee0e41b3",
+    "hash": "ba7f34be96364e4a287fde4d5ac18f64",
     "packages": [
         {
             "name": "composer/installers",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
+                "reference": "a66f93a541c2214b4865161426b077e2b7d951de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+                "url": "https://api.github.com/repos/composer/installers/zipball/a66f93a541c2214b4865161426b077e2b7d951de",
+                "reference": "a66f93a541c2214b4865161426b077e2b7d951de",
                 "shasum": ""
             },
             "replace": {
@@ -99,34 +99,58 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-02-18 17:17:01"
+            "time": "2015-04-21 19:54:55"
         },
         {
-            "name": "usabilitydynamics/wp-gravityforms",
-            "version": "master",
+            "name": "twbs/bootstrap",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:usabilitydynamics/wp-gravityforms",
-                "reference": "master"
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "7b9f204cb4b8fa5cb06b2a9233324997c093f629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/usabilitydynamics/wp-gravityforms/archive/master.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/7b9f204cb4b8fa5cb06b2a9233324997c093f629",
+                "reference": "7b9f204cb4b8fa5cb06b2a9233324997c093f629",
+                "shasum": ""
             },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.3"
+            "replace": {
+                "twitter/bootstrap": "self.version"
             },
-            "type": "wordpress-plugin",
+            "type": "library",
             "extra": {
-                "installer-name": "gravityforms"
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "MIT"
             ],
-            "description": "Fork of GravityForms repo so we can use it in our composer architecture."
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2015-05-03 02:06:59"
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
@@ -138,7 +162,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -147,7 +171,28 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/black-studio-tinymce-widget/",
-            "time": "2015-02-17 10:20:14"
+            "time": "2014-12-24 10:50:56"
+        },
+        {
+            "name": "wpackagist-plugin/wordfence",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordfence/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordfence/",
+            "time": "2015-04-22 17:17:21"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
@@ -159,7 +204,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.zip",
+                "url": "http://downloads.wordpress.org/plugin/wordpress-seo.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -168,7 +213,7 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/",
-            "time": "2015-03-11 11:05:18"
+            "time": "2014-11-26 14:38:07"
         }
     ],
     "packages-dev": [
@@ -182,7 +227,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -203,7 +248,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -224,7 +269,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/log-deprecated-notices.zip",
+                "url": "http://downloads.wordpress.org/plugin/log-deprecated-notices.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -245,7 +290,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simply-show-ids.zip",
+                "url": "http://downloads.wordpress.org/plugin/simply-show-ids.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -259,7 +304,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "twbs/bootstrap": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

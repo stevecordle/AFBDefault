@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 'On');
-if ($_SERVER['REMOTE_ADDR']=='127.0.0.1') {
+if ($_SERVER['REMOTE_ADDR']=='127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1' || $_SERVER['REMOTE_ADDR'] == 'localhost') {
     define('WP_ENV', 'dev');
 } else {
     define('WP_ENV', 'prod');

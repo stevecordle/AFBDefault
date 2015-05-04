@@ -131,7 +131,8 @@ if(!class_exists('TBGrid')):
                 }
             }
             
-            $content = self::contentHelper($content);
+            
+            $content = self::contentHelper($content, 'C');
             $output = "<div class='{$span} {$offset}'>"; 
             $output .= $content;
             $output .= '</div>';

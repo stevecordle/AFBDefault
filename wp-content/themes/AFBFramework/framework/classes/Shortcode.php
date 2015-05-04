@@ -2,7 +2,7 @@
 if ( ! class_exists( 'Shortcode' ) ) {
     class Shortcode{
 
-        protected function removeHtmlTags($content,$p=false,$br=false){	
+        static protected function removeHtmlTags($content,$p=false,$br=false){	
             $content = preg_replace('#^<\/p>|^<br \/>|<p>$#', '', $content);
             $content = preg_replace('#<br \/>#', '', $content);
 
@@ -11,8 +11,9 @@ if ( ! class_exists( 'Shortcode' ) ) {
             return trim($content);
         }
 
-        protected function contentHelper($content,$p=false,$br=false){
-            return self::removeHtmlTags( do_shortcode(shortcode_unautop($content)), $p, $br);
+        static protected function contentHelper($content,$pre='c'){
+            if ( strpos( $content, '[_' ) !== false ) $content = preg_replace( '@(\[_*)_(' . $pre . '|/)@', "$1$2", $content );
+            return do_shortcode(shortcode_unautop($content));
         }
     }
 }
