@@ -3,16 +3,16 @@ Use the following commands to clone/install everything need for a new wordpress 
 ##STEPS FOR NEW SITE SETUP##
 ----------------------------
 
-1. git clone https://github.com/stevecordle/AFGDefault.git .
+1. git clone https://github.com/stevecordle/AFBDefault.git .
 2. git submodule init
 3. git submodule update
 4. composer selfupdate
 5. composer update
-6. cd wordpress && git checkout 4.1.1 (or current Version)
+6. cd wordpress && git checkout 4.2.1 (or current Version)
 
 ----------------------------
 Copy paste the below to go thru all of the steps with one line
 
 
 
-    git clone https://github.com/stevecordle/AFGDefault.git . && git submodule init && git submodule update && composer selfupdate && composer update && cd wordpress && git checkout 4.1.1 && cd ..
+    git clone https://github.com/stevecordle/AFBDefault.git . && git submodule init && git submodule update && composer selfupdate && composer update && cd wordpress && git checkout 4.1.1 && cd ..
