@@ -1,9 +1,5 @@
 <?php
 
-// Load the TGM init if it exists
-if (file_exists(dirname(__FILE__).'/tgm/tgm-init.php')) {
-    require_once( dirname(__FILE__).'/tgm/tgm-init.php' );
-}
 // Load Redux extensions - MUST be loaded before your options are set
 if (file_exists(dirname(__FILE__).'/redux-extensions/extensions-init.php')) {
     require_once( dirname(__FILE__).'/redux-extensions/extensions-init.php' );

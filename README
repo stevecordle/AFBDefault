@@ -13,7 +13,6 @@ Use the following commands to clone/install everything need for a new wordpress 
 8. 
 
 ----------------------------
-Copy paste the below to go thru all of the steps with one line
+Copy paste the below to go thru all of the steps with one lin
 
-
-    git clone https://github.com/stevecordle/AFBDefault.git . && git submodule init && git submodule update && composer selfupdate && composer update && cd wordpress && git checkout 4.2.1 && cd ..
+    git clone https://github.com/stevecordle/AFBDefault.git . && git submodule init && git submodule update && cd wordpress && git checkout 4.2.1 && cd .. && composer selfupdate && composer update && npm install

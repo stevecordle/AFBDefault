@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ba7f34be96364e4a287fde4d5ac18f64",
+    "hash": "8ffc87c127fb85065bdaf34cfeb6531f",
     "packages": [
         {
             "name": "composer/installers",
@@ -100,6 +100,47 @@
                 "zikula"
             ],
             "time": "2015-04-21 19:54:55"
+        },
+        {
+            "name": "redux-framework/redux-framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reduxframework/redux-framework.git",
+                "reference": "5813ef67fe901dcf57b807addbb0538a8ad9c154"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reduxframework/redux-framework/zipball/5813ef67fe901dcf57b807addbb0538a8ad9c154",
+                "reference": "5813ef67fe901dcf57b807addbb0538a8ad9c154",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Team Redux"
+                }
+            ],
+            "description": "Redux is a simple, truly extensible options framework for WordPress themes and plugins.",
+            "homepage": "http://reduxframework.com",
+            "keywords": [
+                "Settings",
+                "customizer",
+                "framework",
+                "options",
+                "plugin",
+                "redux",
+                "wordpress"
+            ],
+            "time": "2015-04-28 23:40:00"
         },
         {
             "name": "twbs/bootstrap",
@@ -305,7 +346,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "twbs/bootstrap": 20
+        "twbs/bootstrap": 20,
+        "redux-framework/redux-framework": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

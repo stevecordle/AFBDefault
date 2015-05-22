@@ -19,7 +19,8 @@
         "wpackagist-plugin/black-studio-tinymce-widget": "*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/wordfence": "*",
-        "twbs/bootstrap": "~3.3@dev"
+        "twbs/bootstrap": "~3.3@dev",
+        "redux-framework/redux-framework": "dev-master"
     },
     "require-dev": {
         "wpackagist-plugin/log-deprecated-notices": "*",
@@ -34,6 +35,9 @@
     },
     "extra": {
         "installer-paths": {
+            "wp-content/themes/AFBFramework/framework/admin/{$name}/": [
+                "redux-framework/redux-framework"
+            ],
             "wp-content/plugins/{$name}/": [
                 "type:wordpress-plugin"
             ]
