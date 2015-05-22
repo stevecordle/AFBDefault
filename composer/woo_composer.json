@@ -1,0 +1,47 @@
+{
+    "name": "afb/wordpress",
+    "description": "Wordpress Composer Stack",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Steve Cordle",
+            "email": "stevec@alliancefranchisebrands.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "wpackagist-plugin/black-studio-tinymce-widget": "*",
+        "wpackagist-plugin/wordpress-seo": "*",
+        "wpackagist-plugin/wordfence": "*",
+        "wpackagist-plugin/woocommerce": "*",
+        "twbs/bootstrap": "~3.3@dev",
+        "redux-framework/redux-framework": "dev-master"
+    },
+    "require-dev": {
+        "wpackagist-plugin/log-deprecated-notices": "*",
+        "wpackagist-plugin/debug-bar": "*",
+        "wpackagist-plugin/debug-bar-console": "*",
+        "wpackagist-plugin/simply-show-ids": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AFB\\": "src"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/themes/AFBFramework/framework/admin/{$name}/": [
+                "redux-framework/redux-framework"
+            ],
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    }
+}
